@@ -15,5 +15,6 @@ jobs:
                   host: ${{ secrets.MAIN_SERVER_IP }}
                   username: ${{ secrets.MAIN_SERVER_USER }}
                   key: ${{ secrets.ED_KEY }}
-                  source: "README.md"
+                  port: ${{ secrets.MAIN_SERVER_PORT }}
+                  source: "test"
                   target: "/var/www"
