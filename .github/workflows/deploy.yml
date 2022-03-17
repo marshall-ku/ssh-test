@@ -15,5 +15,5 @@ jobs:
                   host: ${{ secrets.MAIN_SERVER_IP }}
                   username: ${{ secrets.MAIN_SERVER_USER }}
                   key: ${{ secrets.ED_KEY }}
-                  source: "test"
+                  source: "./test"
                   target: "/var/www"
