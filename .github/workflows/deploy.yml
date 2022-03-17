@@ -1,0 +1,19 @@
+name: Deploy
+
+on:
+    push:
+
+jobs:
+    deploy:
+        name: Build and Deploy
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Deploy via SCP
+              uses: appleboy/scp-action@master
+              with:
+                  host: ${{ secrets.MAIN_SERVER_IP }}
+                  username: ${{ secrets.MAIN_SERVER_USER }}
+                  key: ${{ secrets.ED_KEY }}
+                  source: "test"
+                  target: "/var/www"
